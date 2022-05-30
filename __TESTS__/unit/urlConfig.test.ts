@@ -1,9 +1,9 @@
 import ICloudinaryConfigurations from "../../src/config/interfaces/Config/ICloudinaryConfigurations";
 import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
 import {CloudinaryImage} from "../../src/assets/CloudinaryImage";
-import {Resize} from "../../src/actions/resize";
 import {createNewImage} from "../TestUtils/createCloudinaryImage";
 import URLConfig from "../../src/config/URLConfig";
+import { Resize } from "@cloudinary/transformation-builder-sdk/actions";
 
 
 /**

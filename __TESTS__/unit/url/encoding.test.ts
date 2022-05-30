@@ -1,11 +1,12 @@
-import {fetch, image, subtitles, text, video} from "../../../src/qualifiers/source";
-import {Transformation} from "../../../src/transformation/Transformation";
-import {Overlay} from "../../../src/actions/overlay";
 import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";
 import {sampleEmptyTextStyle} from "../../TestUtils/transformations/sampleEmptyTextStyle";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
-import {Variable} from "../../../src/actions/variable";
-import {Flag} from "../../../src/qualifiers/flag";
+import { image, subtitles, text, video } from "@cloudinary/transformation-builder-sdk/qualifiers/source";
+import { Variable } from "@cloudinary/transformation-builder-sdk/actions/variable";
+import { Overlay } from "@cloudinary/transformation-builder-sdk/actions";
+import { Flag } from "@cloudinary/transformation-builder-sdk/qualifiers/flag";
+import { Transformation } from "@cloudinary/transformation-builder-sdk/transformation/Transformation.js";
+
 
 
 describe('Tests for Encoding the URL', () => {
@@ -116,16 +117,6 @@ describe('Tests for Encoding the URL', () => {
 
     expect(cldImage.toString())
       .toBe(`l_video:my:path/fl_layer_apply`);
-  });
-
-  it('Fetch: base64 encode remote URL', () => {
-    const cldImage = createNewImage('woman')
-      .overlay(Overlay.source(
-        fetch('https://opengraphimg.com/.netlify/functions/generate-opengraph?author=opengraphimg&title=Hey%20Chris%20this%20is%20working')
-      ));
-
-    expect(cldImage.toString())
-      .toBe(`l_fetch:aHR0cHM6Ly9vcGVuZ3JhcGhpbWcuY29tLy5uZXRsaWZ5L2Z1bmN0aW9ucy9nZW5lcmF0ZS1vcGVuZ3JhcGg_YXV0aG9yPW9wZW5ncmFwaGltZyZ0aXRsZT1IZXklMjBDaHJpcyUyMHRoaXMlMjBpcyUyMHdvcmtpbmc=/fl_layer_apply`);
   });
 
   it('Correctly encode variables', () => {

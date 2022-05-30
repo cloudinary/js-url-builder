@@ -1,5 +1,5 @@
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
-import {Animated} from "../../../src/actions/animated";
+import { Animated } from "@cloudinary/transformation-builder-sdk/actions";
 
 describe('Tests for Transformation Action -- Animated', () => {
   it('Creates a cloudinaryURL with animated', () => {

@@ -10,38 +10,12 @@ import URLConfig from "../config/URLConfig.js";
 import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature.js";
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
 
-
-/**
- * Supported delivery type options.
- */
-type DELIVERY_TYPE =
-  'key'|
-  'upload'|
-  'private_delivery'|
-  'public_delivery'|
-  'authenticated'|
-  'fetch'|
-  'sprite'|
-  'text'|
-  'multi'|
-  'facebook'|
-  'twitter'|
-  'twitter_name'|
-  'gravatar'|
-  'youtube'|
-  'hulu'|
-  'vimeo'|
-  'animoto'|
-  'worldstarhiphop'|
-  'dailymotion';
-
 /**
  * @description Cloudinary file without a transformation
  * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryFile {
-  protected assetType: string; // determined by the asset type
   protected cloudName: string; // populated from the cloud config
   protected apiKey: string; // populated from  the cloud config
   protected apiSecret: string; // populated from the cloud config
@@ -123,18 +97,6 @@ class CloudinaryFile {
   setVersion(newVersion: number | string): this {
     if (newVersion) {
       this.version = newVersion;
-    }
-    return this;
-  }
-
-  /**
-   * @description Sets the asset type.
-   * @param {string} newType The type of the asset.
-   * @return {this}
-   */
-  setAssetType(newType: 'key'|'image'|'video'|'raw'|'auto'|'all'|string): this {
-    if (newType) {
-      this.assetType = newType;
     }
     return this;
   }

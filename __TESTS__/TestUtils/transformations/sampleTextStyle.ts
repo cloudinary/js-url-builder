@@ -1,14 +1,16 @@
-import {TextStyle} from "../../../src/qualifiers/textStyle";
-import {FontAntialias} from "../../../src/qualifiers/FontAntialias";
-import {FontWeight} from "../../../src/qualifiers/fontWeight";
-import {FontHinting} from "../../../src/qualifiers/fontHinting";
-import {TextDecoration} from "../../../src/qualifiers/textDecoration";
-import {TextAlignment} from "../../../src/qualifiers/textAlignment";
-import {FontStyle} from "../../../src/qualifiers/fontStyle";
+import {
+  FontHinting,
+  FontStyle,
+  FontWeight,
+  TextAlignment,
+  TextDecoration
+} from "@cloudinary/transformation-builder-sdk/qualifiers";
+import { TextStyle } from "@cloudinary/transformation-builder-sdk/qualifiers/textStyle";
+import { FontAntialias } from "@cloudinary/transformation-builder-sdk/qualifiers/FontAntialias";
 
 /**
- * Creates a TextStyle instance used for testing
- */
+  * Creates a TextStyle instance used for testing
+  */
 function sampleTextStyle(): TextStyle {
   return new TextStyle('arial', 50)
     .letterSpacing(10)

@@ -5,8 +5,6 @@
   "scripts": {
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
-    "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilationsOutput.test.ts  --coverage",
-    "test:comp:service": "ts-node devTools/sanity/index.ts && jest __TESTS__/compilation.test.ts",
     "test:unit": "jest --reporters default",
     "test:unit:watch": "jest --watch --reporters default",
     "test:types": "tsc --project tsconfig.test.json",
@@ -98,10 +96,6 @@
       "import": "./bundles/umd/base.js"
     },
     "./package.json": "./package.json",
-    "./actions/*": {
-      "require": "./actions/*.cjs",
-      "import": "./actions/*.js"
-    },
     "./assets/*": {
       "require": "./assets/*.cjs",
       "import": "./assets/*.js"
@@ -118,17 +112,9 @@
       "require": "./instance/*.cjs",
       "import": "./instance/*.js"
     },
-    "./qualifiers/*": {
-      "require": "./qualifiers/*.cjs",
-      "import": "./qualifiers/*.js"
-    },
     "./sdkAnalytics/*": {
       "require": "./sdkAnalytics/*.cjs",
       "import": "./sdkAnalytics/*.js"
-    },
-    "./transformation/*": {
-      "require": "./transformation/*.cjs",
-      "import": "./transformation/*.js"
     },
     "./*": {
       "require": "./*.cjs",

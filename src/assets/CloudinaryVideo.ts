@@ -1,9 +1,9 @@
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
-import {videoEditType} from "../actions/videoEdit.js";
-import {VideoTransformation} from "../transformation/VideoTransformation.js";
-import {ITranscodeAction} from "../actions/transcode.js";
+import {videoEditType} from "@cloudinary/transformation-builder-sdk/actions/videoEdit.js";
+import {VideoTransformation} from "@cloudinary/transformation-builder-sdk/transformation/VideoTransformation.js";
+import {ITranscodeAction} from "@cloudinary/transformation-builder-sdk/actions/transcode.js";
 
 
 /**
@@ -15,7 +15,6 @@ class CloudinaryVideo extends CloudinaryTransformable {
   constructor(publicID?: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig) {
     /* istanbul ignore next */
     super(publicID, cloudConfig, urlConfig, new VideoTransformation());
-    this.assetType = 'video';
   }
 
   /**

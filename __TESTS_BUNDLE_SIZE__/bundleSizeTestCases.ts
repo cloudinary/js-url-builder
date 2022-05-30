@@ -6,6 +6,7 @@
 import importFromDist from "./utils/stringGenerators/importFromDist";
 import {ITestCase} from "./interfaces/ITestCase";
 import importFromPackage from "./utils/stringGenerators/importFromPackage";
+import importFromLib from "./utils/stringGenerators/importFromLib";
 
 /**
  * @description - Each test case is built using an array of imports  (importsArray)
@@ -19,7 +20,7 @@ const bundleSizeTestCases:ITestCase[] = [
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
-      importFromDist('actions/resize', 'Resize')
+      importFromLib('actions/resize', 'Resize')
     ]
   },
   {
@@ -28,8 +29,8 @@ const bundleSizeTestCases:ITestCase[] = [
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
-      importFromDist('actions/resize', 'Resize'),
-      importFromDist('actions/adjust', 'Adjust')
+      importFromLib('actions/resize', 'Resize'),
+      importFromLib('actions/adjust', 'Adjust')
     ]
   },
   {
@@ -38,9 +39,9 @@ const bundleSizeTestCases:ITestCase[] = [
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
-      importFromDist('actions/resize', 'Resize'),
-      importFromDist('actions/adjust', 'Adjust'),
-      importFromDist('actions/border', 'Border')
+      importFromLib('actions/resize', 'Resize'),
+      importFromLib('actions/adjust', 'Adjust'),
+      importFromLib('actions/border', 'Border')
     ]
   },
   {
@@ -49,9 +50,9 @@ const bundleSizeTestCases:ITestCase[] = [
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
-      importFromDist('actions/resize', 'Resize'),
-      importFromDist('actions/adjust', 'Adjust'),
-      importFromDist('actions/delivery', 'Delivery')
+      importFromLib('actions/resize', 'Resize'),
+      importFromLib('actions/adjust', 'Adjust'),
+      importFromLib('actions/delivery', 'Delivery')
     ]
   },
   {
@@ -59,10 +60,10 @@ const bundleSizeTestCases:ITestCase[] = [
     sizeLimitInKB: 29,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
-      importFromDist('actions/overlay', 'Overlay'),
-      importFromDist('qualifiers/source', 'Source'),
-      importFromDist('transformation/Transformation', 'Transformation'),
-      importFromDist('actions/resize', 'crop')
+      importFromLib('actions/overlay', 'Overlay'),
+      importFromLib('qualifiers/source', 'Source'),
+      importFromLib('transformation/Transformation', 'Transformation'),
+      importFromLib('actions/resize', 'crop')
     ]
   },
   {
@@ -70,27 +71,6 @@ const bundleSizeTestCases:ITestCase[] = [
     sizeLimitInKB: 128,
     importsArray: [
       importFromPackage('* as CloudinaryURLBUILDER')
-    ]
-  },
-  {
-    name: 'Import a Transformation Object',
-    sizeLimitInKB: 7,
-    importsArray: [
-      importFromPackage('Transformation')
-    ]
-  },
-  {
-    name: 'Import All Actions',
-    sizeLimitInKB: 55,
-    importsArray: [
-      importFromPackage('Actions')
-    ]
-  },
-  {
-    name: 'Import All Qualifiers',
-    sizeLimitInKB: 38,
-    importsArray: [
-      importFromPackage('Qualifiers')
     ]
   }
 ];

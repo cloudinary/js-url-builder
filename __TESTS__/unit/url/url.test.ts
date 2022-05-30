@@ -1,7 +1,5 @@
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
-import {Resize} from "../../../src/actions/resize";
-import {Rotate} from "../../../src/actions/rotate";
-
+import { Resize } from "@cloudinary/transformation-builder-sdk/actions";
 
 describe('Tests for URL configuration', () => {
   it('should disallow url_suffix with / or .', () => {

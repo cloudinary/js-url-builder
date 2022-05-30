@@ -21,20 +21,6 @@ function getUrlPrefix(cloudName: string, urlConfig: IURLConfig): string {
 }
 
 /**
- * @private
- * @param assetType
- */
-function handleAssetType(assetType: string): string {
-  //default to image
-  if (!assetType) {
-    return 'image';
-  }
-
-  return assetType;
-}
-
-
-/**
  *
  * @param {string} publicID
  * @param {number} version
@@ -55,4 +41,4 @@ function getUrlVersion(publicID: string, version: number | string, forceVersion:
   return shouldForceVersion ? 'v1' : '';
 }
 
-export {handleAssetType, getUrlVersion, getUrlPrefix};
+export {getUrlVersion, getUrlPrefix};

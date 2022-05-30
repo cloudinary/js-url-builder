@@ -1,6 +1,5 @@
-import {Position} from "../../../src/qualifiers/position";
-import {Gravity} from "../../../src/qualifiers/gravity";
-import {FocusOn} from "../../../src/qualifiers/focusOn";
+import { Gravity, Position } from "@cloudinary/transformation-builder-sdk/qualifiers";
+import { FocusOn } from "@cloudinary/transformation-builder-sdk/qualifiers/focusOn";
 
 /**
  * sample action used for testing
