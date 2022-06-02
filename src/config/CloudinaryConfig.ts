@@ -1,14 +1,14 @@
 import CloudConfig from "./CloudConfig.js";
 import URLConfig from "./URLConfig.js";
-import ICloudinaryConfigurations from "./interfaces/Config/ICloudinaryConfigurations.js";
 import ICloudConfig from "./interfaces/Config/ICloudConfig.js";
 import IURLConfig from "./interfaces/Config/IURLConfig.js";
+import ICloudinaryAssetConfigurations from "./interfaces/Config/ICloudinaryAssetConfigurations.js";
 
 class CloudinaryConfig {
   public cloud: CloudConfig;
   public url: URLConfig;
 
-  constructor(configurations: ICloudinaryConfigurations = {}) {
+  constructor(configurations: ICloudinaryAssetConfigurations = {}) {
     this.cloud = new CloudConfig(configurations.cloud);
     this.url = new URLConfig(configurations.url || {});
   }
@@ -31,7 +31,7 @@ class CloudinaryConfig {
     return this;
   }
 
-  extend(configurations: ICloudinaryConfigurations): CloudinaryConfig {
+  extend(configurations: ICloudinaryAssetConfigurations): CloudinaryConfig {
     this.cloud = this.cloud.extend(configurations.cloud || {});
     this.url = this.url.extend(configurations.url || {});
 

@@ -39,14 +39,12 @@ describe('Tests for CloudinaryConfiguration', () => {
         forceVersion: true,
         signUrl: true,
         longUrlSignature: true,
-        useRootPath: true,
       }
     });
 
     expect(conf.url.forceVersion).toBe(true);
     expect(conf.url.signUrl).toBe(true);
     expect(conf.url.longUrlSignature).toBe(true);
-    expect(conf.url.useRootPath).toBe(true);
   });
 
   it('Will log errors when invalid properties are passed as configuration', () => {
@@ -139,21 +137,5 @@ describe('Tests for CloudinaryConfiguration', () => {
     expect(conf.cloud).toEqual({
       cloudName: 'demo'
     });
-  });
-
-  it('should put format after url_suffix', () => {
-    const img = createNewImage('sample', {
-      cloudName: 'demo'
-    }).setSuffix('SOME_SUFFIX');
-
-    expect(img.toURL()).toBe("https://demo.media.cloudinary.net/sample/SOME_SUFFIX");
-  });
-
-  it('should support url_suffix for raw uploads', () => {
-    const file = createNewFile('sample', {
-      cloudName: 'demo'
-    }).setSuffix('SOME_SUFFIX');
-
-    expect(file.toURL()).toBe("https://demo.media.cloudinary.net/sample/SOME_SUFFIX");
   });
 });

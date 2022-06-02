@@ -1,9 +1,9 @@
-import ICloudinaryConfigurations from "../../src/config/interfaces/Config/ICloudinaryConfigurations";
 import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
 import {CloudinaryImage} from "../../src/assets/CloudinaryImage";
 import {createNewImage} from "../TestUtils/createCloudinaryImage";
 import URLConfig from "../../src/config/URLConfig";
 import { Resize } from "@cloudinary/transformation-builder-sdk/actions";
+import ICloudinaryAssetConfigurations from "../../src/config/interfaces/Config/ICloudinaryAssetConfigurations";
 
 
 /**
@@ -46,10 +46,10 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
      * We can implement this "wrapper", or instruct our customers how to implement it.
      */
     class MyGlobalCloudinary {
-      public cloudinaryConfig: ICloudinaryConfigurations;
+      public cloudinaryConfig: ICloudinaryAssetConfigurations;
 
       // Constructor accepts a cloudinary configuration
-      constructor(cloudinaryConfig: ICloudinaryConfigurations) {
+      constructor(cloudinaryConfig: ICloudinaryAssetConfigurations) {
         this.cloudinaryConfig = cloudinaryConfig;
       }
 
@@ -99,7 +99,7 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
   it('Generates a URL with domain', () => {
     const img = createNewImage('sample', {cloudName: 'demo'}, {domain: 'my-domain.com'});
 
-    expect(img.toURL()).toContain('https://demo.my-domain.com/sample');
+    expect(img.toURL()).toContain('https://my-domain.com/sample');
   });
 
   it('Generates a URL without V1', () => {
@@ -114,12 +114,10 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
     conf
       .setForceVersion(true)
       .setLongUrlSignature(true)
-      .setSignUrl(true)
-      .setUseRootPath(true);
+      .setSignUrl(true);
 
     expect(conf.forceVersion).toBe(true);
     expect(conf.longUrlSignature).toBe(true);
     expect(conf.signUrl).toBe(true);
-    expect(conf.useRootPath).toBe(true);
   });
 });

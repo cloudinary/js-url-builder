@@ -2,16 +2,6 @@ import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 import { Resize } from "@cloudinary/transformation-builder-sdk/actions";
 
 describe('Tests for URL configuration', () => {
-  it('should disallow url_suffix with / or .', () => {
-    const image = createNewImage('test');
-
-    image.setSuffix('hello/world');
-    expect(image.toURL.bind(image)).toThrow();
-
-    image.setSuffix('hello.world');
-    expect(image.toURL.bind(image)).toThrow();
-  });
-
   it('should accept public_id with special characters', () => {
     const image = createNewImage('public%id');
     expect(image.toURL()).toEqual('https://demo.media.cloudinary.net/public%25id');

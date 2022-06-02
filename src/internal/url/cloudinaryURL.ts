@@ -14,7 +14,7 @@ import IURLConfig from "../../config/interfaces/Config/IURLConfig.js";
 function getUrlPrefix(cloudName: string, urlConfig: IURLConfig): string {
   const domain = urlConfig.domain;
   if (domain) {
-    return `https://${cloudName}.${domain}`;
+    return `https://${domain}`;
   } else {
     return `https://${cloudName}.media.cloudinary.net`;
   }

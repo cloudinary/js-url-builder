@@ -1,12 +1,16 @@
-import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations.js";
 import {CloudinaryImage} from "../assets/CloudinaryImage.js";
 import {CloudinaryVideo} from "../assets/CloudinaryVideo.js";
+import ICloudinaryAssetConfigurations from "../config/interfaces/Config/ICloudinaryAssetConfigurations.js";
 
-
+/**
+ * @description Cloudinary instance
+ * NOTE: (internal) raw and media where not added as aliases since they
+ * increased the bundle size
+ */
 class Cloudinary {
-  private cloudinaryConfig: ICloudinaryConfigurations;
+  private cloudinaryConfig: ICloudinaryAssetConfigurations;
 
-  constructor(cloudinaryConfig?: ICloudinaryConfigurations) {
+  constructor(cloudinaryConfig?: ICloudinaryAssetConfigurations) {
     if (cloudinaryConfig) {
       this.cloudinaryConfig = cloudinaryConfig;
     }
@@ -20,7 +24,7 @@ class Cloudinary {
     return new CloudinaryVideo(publicID, this.cloudinaryConfig.cloud, this.cloudinaryConfig.url);
   }
 
-  setConfig(cloudinaryConfig: ICloudinaryConfigurations):this {
+  setConfig(cloudinaryConfig: ICloudinaryAssetConfigurations):this {
     this.cloudinaryConfig = cloudinaryConfig;
     return this;
   }
