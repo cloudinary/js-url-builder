@@ -26,7 +26,6 @@ class CloudinaryFile {
   private publicID: string;
   private extension: string;
   private signature: string;
-  private suffix: string;
 
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.setPublicID(publicID);
@@ -68,16 +67,6 @@ class CloudinaryFile {
     return this;
   }
 
-
-  /**
-   * @description Sets the URL SEO suffix of the asset.
-   * @param {string} newSuffix The SEO suffix.
-   * @return {this}
-   */
-  setSuffix(newSuffix: string): this {
-    this.suffix = newSuffix;
-    return this;
-  }
 
   /**
    * @description Sets the signature of the asset.
@@ -122,13 +111,6 @@ class CloudinaryFile {
     if (typeof this.cloudName === 'undefined') {
       throw 'You must supply a cloudName when initializing the asset';
     }
-
-    const suffixContainsDot = this.suffix && this.suffix.indexOf('.') >= 0;
-    const suffixContainsSlash = this.suffix && this.suffix.indexOf('/') >= 0;
-
-    if (suffixContainsDot || suffixContainsSlash) {
-      throw '`suffix`` should not include . or /';
-    }
   }
 
   getSignature(): string {
@@ -164,7 +146,7 @@ class CloudinaryFile {
       // we can't use serializeCloudinaryCharacters because that does both things (, and /)
       .replace(/,/g, '%2C');
 
-    const url = [prefix, this.getSignature(), transformationString, version, publicID, this.suffix]
+    const url = [prefix, this.getSignature(), transformationString, version, publicID]
       .filter((a) => a)
       .join('/');
 

@@ -6,7 +6,6 @@ import ICloudConfig from "./interfaces/Config/ICloudConfig.js";
 class URLConfig extends Config implements IURLConfig {
   signUrl?: boolean;
   longUrlSignature?: boolean;
-  useRootPath?: boolean;
   forceVersion?: boolean;
   domain?: string;
 
@@ -40,15 +39,6 @@ class URLConfig extends Config implements IURLConfig {
     this.longUrlSignature = value;
     return this;
   }
-
-  /**
-   * @param value Sets whether or not to use a root path
-   */
-  setUseRootPath(value: boolean): this {
-    this.useRootPath = value;
-    return this;
-  }
-
 
   /**
    * @param value Sets whether to force a version in the URL

@@ -5,7 +5,6 @@
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/cloudinary_sdks#configuration_parameters|URL Parameters}
  * @prop {boolean} [signUrl]
  * @prop {boolean} [longUrlSignature]
- * @prop {boolean} [useRootPath]
  * @prop {boolean} [forceVersion]
  * @prop {boolean} [analytics]
  * @example
@@ -37,11 +36,6 @@ interface IURLConfig {
    * Whether or not to use a long signature
    */
   longUrlSignature?: boolean;
-
-  /**
-   * Whether or not to use the root path
-   */
-  useRootPath?: boolean;
 
   /**
    * Whether or not to force a version
