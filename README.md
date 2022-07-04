@@ -2,7 +2,7 @@ Cloudinary url-builder SDK
 =========================
 [![Build Status](https://api.travis-ci.com/cloudinary/js-url-builder.svg?branch=master)](https://app.travis-ci.com/github/cloudinary/js-url-builder)
 ## About
-The Cloudinary url-builder SDK allows you to quickly and easily integrate your application with Cloudinary.
+The Cloudinary js-url-builder SDK allows you to quickly and easily integrate your application with Cloudinary.
 Effortlessly optimize and transform your cloud's assets.
 
 This SDK can also be used with [popular frontend frameworks](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html).
