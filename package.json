@@ -1,7 +1,7 @@
 {
   "name": "@cloudinary/url-builder",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.0-beta",
+  "description": "JS Url Builder",
   "scripts": {
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
