@@ -4,9 +4,6 @@ import {Cloudinary} from "@cloudinary/url-builder/instance/Cloudinary";
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'demo'
-    },
-    url: {
-        secure: true // force https, set to false to force http
     }
 });
 

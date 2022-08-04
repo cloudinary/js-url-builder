@@ -6,10 +6,7 @@ const { Resize } = require('@cloudinary/url-builder/actions/resize');
 const cld = new Cloudinary({
   cloud: {
     cloudName: 'test',
-  },
-  url: {
-    secure: true,
-  },
+  }
 });
 
 const myImage = cld.image('sample');

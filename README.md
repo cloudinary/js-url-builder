@@ -61,13 +61,9 @@ import {Cloudinary} from '@cloudinary/url-builder';
 const cld = new Cloudinary({
   cloud: {
     cloudName: 'demo'
-  },
-  url: {
-    secure: true // force https, set to false to force http
   }
 });
 ```
-
 
 ### Transform and Optimize Assets
 - [See full documentation](https://cloudinary.com/documentation/javascript_image_transformations)

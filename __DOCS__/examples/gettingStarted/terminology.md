@@ -13,9 +13,6 @@ import {RotationMode} from "@cloudinary/url-builder/qualifiers/rotationMode";
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'demo'
-    },
-    url: {
-        secure: true // force https, set to false to force http
     }
 });
 

@@ -118,7 +118,7 @@ describe('Tests for CloudinaryConfiguration', () => {
     expect(newConf.cloud.apiKey).toBe('xyz');
   });
 
-  it('Should set secure to true by default', () => {
+  it('Should generate https url', () => {
     const url = createNewImage('sample')
       .toURL();
 

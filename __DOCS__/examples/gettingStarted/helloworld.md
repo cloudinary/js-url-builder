@@ -10,9 +10,6 @@ import {scale} from "@cloudinary/url-builder/actions/resize";
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'demo'
-    },
-    url: {
-        secure: true // force https, set to false to force http
     }
 });
 
