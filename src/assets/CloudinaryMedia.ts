@@ -1,11 +1,11 @@
 import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
-import {videoEditType} from "@cloudinary/transformation-builder-sdk/actions/videoEdit.js";
-import {LayerAction} from "@cloudinary/transformation-builder-sdk/actions/layer/LayerAction.js";
-import {Transformation} from "@cloudinary/transformation-builder-sdk/transformation/Transformation.js";
+import {videoEditType} from "@cloudinary/transformation-builder-sdk/actions/videoEdit";
+import {LayerAction} from "@cloudinary/transformation-builder-sdk/actions/layer/LayerAction";
+import {Transformation} from "@cloudinary/transformation-builder-sdk/transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import { cloneDeep } from '../internal/utils/cloneDeep.js';
-import {ITranscodeAction} from "@cloudinary/transformation-builder-sdk/actions/transcode.js";
+import {ITranscodeAction} from "@cloudinary/transformation-builder-sdk/actions/transcode";
 
 
 /**
