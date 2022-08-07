@@ -1,9 +1,9 @@
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
-import {videoEditType} from "@cloudinary/transformation-builder-sdk/actions/videoEdit.js";
-import {VideoTransformation} from "@cloudinary/transformation-builder-sdk/transformation/VideoTransformation.js";
-import {ITranscodeAction} from "@cloudinary/transformation-builder-sdk/actions/transcode.js";
+import {videoEditType} from "@cloudinary/transformation-builder-sdk/actions/videoEdit";
+import {VideoTransformation} from "@cloudinary/transformation-builder-sdk/transformation/VideoTransformation";
+import {ITranscodeAction} from "@cloudinary/transformation-builder-sdk/actions/transcode";
 
 
 /**

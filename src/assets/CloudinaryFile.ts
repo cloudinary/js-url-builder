@@ -2,7 +2,7 @@ import {
   getUrlPrefix,
   getUrlVersion
 } from "../internal/url/cloudinaryURL.js";
-import {Transformation} from "@cloudinary/transformation-builder-sdk/transformation/Transformation.js";
+import {Transformation} from "@cloudinary/transformation-builder-sdk/transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import IAuthTokenConfig from "../config/interfaces/Config/IAuthTokenConfig.js";
