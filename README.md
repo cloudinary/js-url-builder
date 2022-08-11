@@ -75,7 +75,7 @@ const cld = new Cloudinary({/*...*/})
 const myImage = cld.image('sample');
 
 // Import the resize transformation and apply it to myImage
-import {Resize} from '@cloudinary/url-builder/actions/resize';
+import {Resize} from '@cloudinary/transformation-builder-sdk/actions/resize';
 
 // Resize the image to 100x100
 myImage.resize(Resize.scale().width(100).height(100));
